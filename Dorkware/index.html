@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Google Dorkware</title>
+    
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-top: 20px;
+            color: #00ffee;
+            text-shadow: 0 0 15px #00ffee, 0 0 10px #00ffe1;
+        }
+
+        #search-box {
+            margin-top: 30px;
+        }
+
+        input[type="text"] {
+            width: 60%;
+            padding: 15px;
+            font-size: 1.4em;
+            border: 2px solid #00ffee;
+            background-color: #222;
+            color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            border-color: #ff5733;
+            box-shadow: 0 0 15px rgba(255, 87, 51, 0.7);
+        }
+
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        .btn {
+            padding: 15px;
+            font-size: 1.1em;
+            border: 2px solid #00ffee;
+            background: linear-gradient(145deg, #333, #444);
+            color: #fff;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 10px rgba(0, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn i {
+            font-size: 1.5em;
+        }
+
+        .btn:hover {
+            background: linear-gradient(145deg, #ff5733, #ff6e40);
+            box-shadow: 0 6px 15px rgba(0, 255, 255, 0.7), 0 3px 6px rgba(0, 0, 0, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .btn:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 5px rgba(0, 255, 255, 0.5), 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            margin-top: 50px;
+            color: #fff;
+        }
+
+        footer a {
+            color: #00ffee;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .terminal {
+            border: 2px solid #00b7ff;
+            width: 80%;
+            margin: 50px auto;
+            padding: 30px;
+            text-align: center;
+            background-color: #0d0d0d;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 255, 247, 0.7);
+        }
+
+        .terminal-text {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #00ffee;
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 5px #00ffee;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2em;
+            }
+            input[type="text"] {
+                width: 90%;
+                font-size: 1.2em;
+            }
+            .btn {
+                font-size: 1em;
+                padding: 12px;
+            }
+
+            .button-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            input[type="text"] {
+                width: 95%;
+                font-size: 1em;
+                padding: 12px;
+            }
+            .btn {
+                font-size: 0.9em;
+                padding: 10px;
+            }
+
+            .button-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal">
+        <h1>Google Dorkware</h1>
+        <p class="terminal-text">Input the target domain to identify vulnerable parameters and sensitive data leaks using predefined dorks:</p>
+
+        <div id="search-box">
+            <input type="text" id="target" placeholder="Enter Target Domain (Ex: test.php.vulnweb.com)">
+        </div>
+
+        <div class="button-grid">
+            <div class="btn" onclick="find(1)">
+                <i class="fas fa-sign-in-alt"></i> Login Pages
+            </div>
+            <div class="btn" onclick="find(2)">
+                <i class="fas fa-bug"></i> SQL Errors
+            </div>
+            <div class="btn" onclick="find(3)">
+                <i class="fas fa-database"></i> SQL Injection
+            </div>
+            <div class="btn" onclick="find(4)">
+                <i class="fas fa-lock"></i> Secret
+            </div>
+            <div class="btn" onclick="find(5)">
+                <i class="fas fa-external-link-alt"></i> Open Redirect
+            </div>
+            <div class="btn" onclick="find(6)">
+                <i class="fas fa-folder"></i> LFI
+            </div>
+            <div class="btn" onclick="find(7)">
+                <i class="fas fa-code"></i> XSS
+            </div>
+            <div class="btn" onclick="find(8)">
+                <i class="fas fa-upload"></i> File Upload
+            </div>
+            <div class="btn" onclick="find(9)">
+                <i class="fas fa-file-alt"></i> Sensitive Docs
+            </div>
+            <div class="btn" onclick="find(10)">
+                <i class="fas fa-key"></i> API
+            </div>
+            <div class="btn" onclick="find(11)">
+                <i class="fas fa-key"></i> SSH pvtKey
+            </div>
+            <div class="btn" onclick="find(12)">
+                <i class="fas fa-folder"></i> Directory Listing
+            </div>
+            <div class="btn" onclick="find(13)">
+                <i class="fas fa-cog"></i> Config Files
+            </div>
+            <div class="btn" onclick="find(14)">
+                <i class="fab fa-wordpress"></i> WordPress
+            </div>
+            <div class="btn" onclick="find(15)">
+                <i class="fas fa-exclamation-circle"></i> Exposed
+            </div>
+            <div class="btn" onclick="find(16)">
+                <i class="fas fa-shield-alt"></i> SSRF
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Follow us on <a href="https://www.linkedin.com/in/dharmendrastm/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
+        <font face="iceberg" size="2">copyright©2025 | dharmendracyberhacks!</font>
+    </footer>
+
+    <script src="source code.js"></script>
+</body>
+</html>
+<!--dharmendrastm-->
