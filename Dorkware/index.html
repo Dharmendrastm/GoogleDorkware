@@ -1,12 +1,42 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="https://github.com/Dharmendrastm/GoogleDorkware/blob/main/dhcybertech.jpg" />
+    <meta property="og:image" content="https://github.com/Dharmendrastm/GoogleDorkware/blob/main/dhcybertech.jpg">
+    <meta property="og:image:url" content="https://github.com/Dharmendrastm/GoogleDorkware/blob/main/dhcybertech.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Google Dorkware</title>
-    
+    <title>Google Dorkware</title>    
     <style>
+        header {
+            padding: 20px 10px;
+            background-color: #1e1e1e;
+            border-bottom: 2px solid #6dede5;
+            box-shadow: 0 4px 10px rgba(0, 255, 255, 0.2), 0 6px 15px rgba(0, 255, 255, 0.3); 
+            border-radius: 5px; 
+            transform: translateY(2px); 
+            transition: all 0.3s ease; 
+        }
+        
+        header:hover {
+            box-shadow: 0 6px 15px rgba(0, 255, 255, 0.4), 0 8px 20px rgba(0, 255, 255, 0.5); 
+            transform: translateY(0); 
+        }        
+        
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+            color: #00ffee;
+            text-shadow: 0 0 10px #00ffee;
+        }
+        
+        header .tagline {
+            font-size: 1.1em;
+            color: #aaa;
+            margin-top: 5px;
+        }
         body {
             background-color: #121212;
             color: #e0e0e0;
@@ -23,8 +53,10 @@
 
         #search-box {
             margin-top: 30px;
+            display: flex;
+            justify-content: center; 
         }
-
+        
         input[type="text"] {
             width: 60%;
             padding: 15px;
@@ -33,14 +65,22 @@
             background-color: #222;
             color: #fff;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+            box-shadow: 0 4px 8px rgba(0, 255, 255, 0.2), 0 6px 15px rgba(0, 255, 255, 0.3); 
             transition: all 0.3s ease;
+            transform: translateY(2px); 
         }
-
+        
         input[type="text"]:focus {
             border-color: #ff5733;
-            box-shadow: 0 0 15px rgba(255, 87, 51, 0.7);
+            box-shadow: 0 0 15px rgba(255, 87, 51, 0.7), 0 0 20px rgba(255, 87, 51, 0.5); 
+            transform: translateY(0); 
         }
+        
+        input[type="text"]:hover {
+            box-shadow: 0 6px 12px rgba(0, 255, 255, 0.3), 0 8px 20px rgba(0, 255, 255, 0.4); 
+            transform: translateY(1px); 
+        }
+        
 
         .button-grid {
             display: grid;
@@ -84,15 +124,32 @@
         }
 
         footer {
-            margin-top: 50px;
+            background-color: #1e1e1e;
+            padding: 20px 10px;
+            margin-top: 40px;
+            border-top: 2px solid #00ffee;
+            box-shadow: 0 -4px 10px rgba(0, 255, 255, 0.2), 0 -6px 15px rgba(0, 255, 255, 0.3); /* Added multiple shadows for depth */
+            border-radius: 8px; /* Slightly rounded corners for a soft 3D look */
+            transform: translateY(2px); /* Slight lift for the footer */
+            transition: all 0.3s ease; /* Smooth transition */
+        }
+        
+        footer:hover {
+            box-shadow: 0 -6px 15px rgba(0, 255, 255, 0.3), 0 -8px 20px rgba(0, 255, 255, 0.4); /* Enhanced shadow on hover for more depth */
+            transform: translateY(0); /* Reset lift on hover */
+        }
+        
+        footer p {
+            margin: 8px 0;
+            font-size: 0.95em;
             color: #fff;
         }
-
+        
         footer a {
             color: #00ffee;
             text-decoration: none;
         }
-
+        
         footer a:hover {
             text-decoration: underline;
         }
@@ -162,6 +219,12 @@
     </style>
 </head>
 <body>
+    <body>
+        <!-- Header Section -->
+        <header>
+            <h1> Google Dorkware</h1>
+            <p class="tagline">Google Dorkware is a web-based tool designed to simplify the use of advanced Google search operators (commonly known as Google Dorks) to identify sensitive information, misconfigurations, and potential vulnerabilities indexed by search engines. The tool provides a user-friendly interface that helps cybersecurity enthusiasts, bug bounty hunters, and penetration testers quickly generate and execute dork queries.</p>
+        </header>
     <div class="terminal">
         <h1>Google Dorkware</h1>
         <p class="terminal-text">Input the target domain to identify vulnerable parameters and sensitive data leaks using predefined dorks:</p>
@@ -222,8 +285,12 @@
         </div>
     </div>
     <footer>
-        <p>Follow us on <a href="https://www.linkedin.com/in/dharmendrastm/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
-        <font face="iceberg" size="2">copyright©2025 | dharmendracyberhacks!</font>
+        <p>Follow us on 
+            <a href="https://www.linkedin.com/in/dharmendrastm/" target="_blank">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+        </p>
+        <p>&copy; 2025 | <strong>dharmendracyberhacks!</strong></p>
     </footer>
 
     <script src="source code.js"></script>
